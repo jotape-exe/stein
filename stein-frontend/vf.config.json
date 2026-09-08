@@ -1,0 +1,10 @@
+{
+  "srcDir": "src",
+  "featuresDir": "src/features",
+  "sharedDir": "src/shared",
+  "alias": "@",
+  "httpClient": "axios",
+  "usesPinia": true,
+  "usesVueRouter": true,
+  "usesTanstackQuery": false
+}
