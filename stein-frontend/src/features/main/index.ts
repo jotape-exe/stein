@@ -1,0 +1,6 @@
+export * from './services/main.service'
+export * from './composables/useMainService'
+export * from './composables/useMainPage'
+export * from './stores/main.store'
+export * from './types/main.types'
+export * from './routes'
