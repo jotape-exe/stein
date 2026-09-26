@@ -6,6 +6,7 @@ This is the backend for the Stein project, built with Node.js, Express 5, and Ty
 
 - Node.js (v20+ recommended)
 - npm
+- Docker + Docker Compose (Postgres local)
 
 ## Installation
 
@@ -13,6 +14,16 @@ Install the project dependencies:
 
 ```bash
 npm install
+```
+
+## Database
+
+Start Postgres, configure env and apply migrations + seeds (from the repo root):
+
+```bash
+docker compose -f infra/docker-compose.yml up -d
+cd stein-backend && cp -n .env.example .env
+npm run db:migrate && npm run db:seed
 ```
 
 ## Available Scripts
@@ -39,6 +50,14 @@ To run the compiled output in a production-like manner:
 
 ```bash
 npm start
+```
+
+### Database
+
+```bash
+npm run db:migrate   # latest migrations (knex, via tsx)
+npm run db:seed      # roles, permissions, admin user
+npm run db:rollback  # rollback all batches
 ```
 
 ## Project Structure
